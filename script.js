@@ -92,7 +92,7 @@ const nextSequence = function () {
 };
 
 ///////////////////////////////////////////////
-//Event listener for keypress to launch next sequence
+//Event listener for keypress and button click to launch next sequence
 $(document).on("keypress", function () {
   if (!gameState) {
     nextSequence();
@@ -100,6 +100,12 @@ $(document).on("keypress", function () {
   }
 });
 
+$(".start-btn").on("click", function () {
+  if (!gameState) {
+    nextSequence();
+    gameState = true;
+  }
+});
 /////////////////////////////////////////////////
 //Event listener for clicking any of the colors + storing those inputs
 $(".btn").on("click", function (e) {
